@@ -14,7 +14,7 @@ module WebKit
     include WebKit::DOMEventTarget
   end
 end
-
+    p WebKit::WebView.instance_methods.sort
 __END__
 # Program is below
 # Usage is near idential to ruby-js
