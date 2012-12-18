@@ -13,6 +13,20 @@ module WebKit
   class WebKit::DOMElement
     include WebKit::DOMEventTarget
   end
+  
+  load_class :DOMNodeList
+  class WebKit::DOMNodeList
+    include Enumerable
+    def each &b
+      for i in 0..length-1
+        yield item(i)
+      end
+    end
+    alias :length :get_length
+    def [] i
+      item i
+    end
+  end
 end
     p WebKit::WebView.instance_methods.sort
 __END__

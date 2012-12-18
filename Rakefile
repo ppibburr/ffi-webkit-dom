@@ -12,7 +12,7 @@ namespace :test do
   desc 'Run rcov for the entire test suite'
   task :coverage do
     rm_f "coverage"
-    system "rcov", "-Ilib", "--exclude", "\.gem\/,\/gems\/", *FileList['test/**/*_test.rb']
+    system "simplecov", "-Ilib", "--exclude", "\.gem\/,\/gems\/", *FileList['test/**/*_test.rb']
   end
 end
 
